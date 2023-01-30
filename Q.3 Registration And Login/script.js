@@ -28,12 +28,11 @@ Login = (event) => {
         }
     }).then(y => {
         if (y.status == 200 || y.status == 204) {
-            document.querySelector("#login-msg").innerHTML = "login successfully";
+            console.log( "login successfully");
         }
         console.log(y);
         y.json()
-    })
-        .then(y => {
+    }).then(y => {
             console.log(y);
             localStorage.setItem("token", y.jwtToken)
         })
